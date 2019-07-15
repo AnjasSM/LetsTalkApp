@@ -1,11 +1,8 @@
-### What is MermaidID ?
-MermaidID is E-commerce app that you can use for buy or selling item
-
-<h1 align='center'>React Native (MermaidID) With Redux</h1>
+<h1 align='center'>React Native Chat App with Map</h1>
 
 <p align='center'>
-  <a href='https://facebook.github.io/react-native/'>
-  <img src='https://kreitech.io/blog/wp-content/uploads/2018/10/1_-NOQtyJAGQ1RNC3iVt_thA.png' />
+  <a href='https://github.com/AnjasSM/LetsTalkApp'>
+  <img src='https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/ic_launcher.png' />
   </a>
 </p>
 
