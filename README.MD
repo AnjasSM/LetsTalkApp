@@ -2,7 +2,7 @@
 
 <p align='center'>
   <a href='https://github.com/AnjasSM/LetsTalkApp'>
-  <img src='https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/ic_launcher.png' />
+  <img src='https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Logowithtagline.jpg' />
   </a>
 </p>
 
@@ -10,14 +10,7 @@
 <br>
 
 ### What is Let's Talk ?
-<!-- MermaidID is E-commerce app that you can use for buy or selling item -->
-
-### Need Before You Run This App
-
-- NodeJS v8+
-- React Native
-- Android studio
-- sdk
+Let's Talk is a chat app which features to tracking friend's with Google Map. This app using React Native and Firebase
 
 ### APK Documentation Video when it Use
 
