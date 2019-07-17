@@ -6,9 +6,6 @@
   </a>
 </p>
 
-<br>
-<br>
-
 ### What is Let's Talk ?
 Let's Talk is a chat app which features to tracking friend's with Google Map. This app using React Native and Firebase
 
@@ -26,3 +23,9 @@ Let's Talk is a chat app which features to tracking friend's with Google Map. Th
     <img src="https://res.cloudinary.com/dvyonb6zt/image/upload/v1563113041/Screenshot_20190714-204813_rvueez.png" width=400 align="center" style="margin-right:20px"/>
     
 </p>  -->
+
+
+
+### Login & Register page 
+
+ispired by Vsevolod Pavlovskyi [Dribbble](https://dribbble.com/shots/6783278-Coffee-App-Login-Create-Account);

@@ -1,7 +1,32 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet, KeyboardAvoidingView} from 'react-native';
 
 class Register extends Component {
+
+    state = { 
+        email: '',
+        password: '',
+        fullname: '',
+        phone: '',
+        errorMessage: ''
+    }
+
+    _RegisterHandler = () => {
+        const {email, password, fullname, phone} = this.state
+        if(email !== '' && password !== '' && fullname !=='' && phone !=='') {
+            let data = {
+                'email': email,
+                'password': password,
+                'fullname': fullname,
+                'phone': phone
+            }
+            console.log(`${data} \n has been registered`)
+        } else {
+            alert.alert('Input cant Empty')
+        }
+        
+    }
+
     render() {
         return (
             <View style={{flex:1}}>
@@ -13,10 +38,31 @@ class Register extends Component {
                         <Text style={styles.font}>create account</Text>
                     </View>
                     <View style={{marginLeft: 40, marginRight: 40, marginTop:30}}>
-                        <TextInput placeholder='Email' style={styles.input}/>
-                        <TextInput placeholder='Fullname' style={styles.input}/>
-                        <TextInput placeholder='Phone Number' style={styles.input}/>
-                        <TextInput placeholder='Password' style={styles.input}/>
+                        <TextInput
+                            placeholder='Email'
+                            style={styles.input}
+                            onChangeText={ email => this.setState({ email })} 
+                            value={this.state.email}
+                        />
+                        <TextInput
+                            placeholder='Fullname'
+                            style={styles.input}
+                            onChangeText={ fullname => this.setState({ fullname })}
+                            value={this.state.fullname}
+                        />
+                        <TextInput
+                            placeholder='Phone Number'
+                            style={styles.input}
+                            onChangeText={ phone => this.setState({ phone })}
+                            value={this.state.phone}
+                        />
+                        <TextInput
+                            placeholder='Password'
+                            style={styles.input}
+                            onChangeText={ password => this.setState({ password })}
+                            value={this.state.password}
+                            secureTextEntry={true}
+                        />
                     </View>
                     <View style={{margin: 40, alignItems: 'center'}}>
                         <TouchableOpacity style={styles.submitBtn}>

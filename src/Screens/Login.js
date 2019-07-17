@@ -1,7 +1,29 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet, Alert} from 'react-native';
 
 class Login extends Component {
+
+    state = { 
+        email: '',
+        password: '',
+        errorMessage: ''
+    }
+
+    _LoginHandler = () => {
+        const {email, password} = this.state
+        const emailVer = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g;
+        if(email !== '' && password !== '') {
+            let data = {
+                'email': email,
+                'password': password
+            }
+            console.log(`${data} \n has been login`)
+            this.props.navigation.navigate('Home')
+        } else {
+            Alert.alert('email and password cant empty')
+        }
+    }
+
     render() {
         return (
             <View style={{flex:1}}>
@@ -14,12 +36,22 @@ class Login extends Component {
                         <Text style={styles.font}>to talk with some</Text>
                         <Text style={styles.font2}>friend's</Text>
                     </View>
-                    <View style={{marginLeft: 40, marginRight: 40, marginTop:30}}>
-                        <TextInput placeholder='Email' style={styles.input}/>
-                        <TextInput placeholder='Password' style={styles.input}/>
+                    <View style={{marginLeft: 40, marginRight: 40, marginTop:30, position: 'relative'}}>
+                        <TextInput
+                            placeholder='Email'
+                            style={styles.input}
+                            onChangeText={email => this.setState({ email })}
+                            value={this.state.email}
+                        />
+                        <TextInput
+                            placeholder='Password'
+                            style={styles.input}
+                            onChangeText={password => this.setState({ password })}
+                            secureTextEntry={true}
+                        />
                     </View>
                     <View style={{margin: 40, alignItems: 'center'}}>
-                        <TouchableOpacity style={styles.signinBtn}>
+                        <TouchableOpacity style={styles.signinBtn} onPress={this._LoginHandler}>
                             <Text style={styles.signinBtnText}>sign in</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.signupBtn} onPress={()=> this.props.navigation.navigate('Register')}>
