@@ -1,10 +1,30 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Login from '../Screens/Login';
 import Register from '../Screens/Register';
 import Home from '../Screens/Home';
-import FriendList from '../Screens/FriendsList';
+import FriendsList from '../Screens/FriendsList';
+import AuthLoadingScreen from '../Screens/Loading';
+import UserProfile from '../Screens/UserProfile';
 
-const AppNavigator = createStackNavigator(
+const AppStack = createStackNavigator(
+    {
+        Home: {
+            screen: Home
+        },
+        FriendsList: {
+            screen: FriendsList
+        },
+        UserProfile: {
+            screen: UserProfile
+        }
+    },
+    {
+        headerMode: 'none',
+        initialRouteName: 'Home'
+    }
+);
+
+const AuthStack = createStackNavigator(
     {
         Login: {
             screen: Login
@@ -12,18 +32,20 @@ const AppNavigator = createStackNavigator(
         Register: {
             screen: Register
         },
-        Home: {
-            screen: Home
-        },
-        FriendList: {
-            screen: FriendList
-        }
-        
     },
     {
-        headerMode: "none" 
+        headerMode: 'none'
     }
-);
-  
-const AppContainer = createAppContainer(AppNavigator)
-export default AppContainer;
+)
+
+export default createAppContainer(createSwitchNavigator (
+    {
+        AuthLoading: AuthLoadingScreen,
+        App: AppStack,
+        Auth: AuthStack,
+    },
+    {
+        initialRouteName: 'AuthLoading'
+    }
+))
+

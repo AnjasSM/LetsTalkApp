@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Icon, Avatar } from 'react-native-elements'
+import { Icon } from 'react-native-elements'
 
 class BasicHeader extends Component {
     render() {
+        const { screenPosition } = this.props
         return (
             <View style={styles.header}>
                 <View style={{flex:1,flexDirection: 'row'}}>
@@ -14,12 +15,17 @@ class BasicHeader extends Component {
                     </View>
                     <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
                         <View style={{borderWidth:2, width: 50, borderRadius: 10, borderColor:'#6EC1BC'}} >
-                            <Text>friend list</Text>
+                            {
+                                screenPosition === 'friendlist' ? (<Text>friend list</Text>) : (<Text>User Profile</Text>)
+                            }
                         </View>
                     </View>
                     <View style={{flex:1, justifyContent: 'flex-end', flexDirection: 'row', alignItems: 'center', marginRight: 10}}>
                         <TouchableOpacity>
-                            <Icon size={35} name='dots-three-horizontal' type='entypo' color='#6EC1BC' />                            
+                            {
+                                screenPosition === 'friendlist' ? (<Icon size={35} name='dots-three-horizontal' type='entypo' color='#6EC1BC' />) : (<Text></Text>)
+                            }
+                                                       
                         </TouchableOpacity>
                     </View>
                 </View>
