@@ -1,4 +1,5 @@
 const User = {
+    data:[],
     userId: null,
     username : '',
     email: '',

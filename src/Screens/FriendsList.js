@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import firebase from 'firebase';
 import Header from '../Components/MainHeader';
 import User from '../User';
 
@@ -23,9 +24,9 @@ class FriendsList extends Component {
         let userRef = firebase.database().ref('users/' + User.uid);
         userRef.on('value', (val) => {
             let user = val.val();
-            User.name = user.name,
+            User.username = user.username,
                 User.phone = user.phone,
-                User.avatar = user.avatar,
+                User.image = user.image,
                 User.email = user.email,
                 User.data = {
                     name: User.name,
