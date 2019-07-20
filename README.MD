@@ -19,10 +19,18 @@ Let's Talk is a chat app which features to tracking friend's with Google Map. Th
 
 
 ### APP SCREENSHOTS
-<!-- <p align="center">
-    <img src="https://res.cloudinary.com/dvyonb6zt/image/upload/v1563113041/Screenshot_20190714-204813_rvueez.png" width=400 align="center" style="margin-right:20px"/>
+<p align="center">
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-16-10-25-41-62.png" width=400 align="center" style="margin-right:20px"/>
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-16-10-26-29-83.png" width=400 align="center" style="margin-right:20px"/>
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-19-08-20-23-42.png" width=400 align="center" style="margin-right:20px"/>
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-20-09-01-41-87.png" width=400 align="center" style="margin-right:20px"/>
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-20-09-01-47-11.png" width=400 align="center" style="margin-right:20px"/>
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-20-09-01-52-75.png" width=400 align="center" style="margin-right:20px"/>
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-20-09-06-33-74.png" width=400 align="center" style="margin-right:20px"/>
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-20-09-06-44-29.png" width=400 align="center" style="margin-right:20px"/>
+    <img src="https://raw.githubusercontent.com/AnjasSM/LetsTalkApp/master/src/Assets/Image/Screenshot_2019-07-20-09-06-49-93.png" width=400 align="center" style="margin-right:20px"/>
     
-</p>  -->
+</p> 
 
 
 
