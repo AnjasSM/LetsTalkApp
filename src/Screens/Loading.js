@@ -12,6 +12,7 @@ export default class Loading extends Component {
   }
 
   _bootstrapAsync = async () => {
+    User.email = await AsyncStorage.getItem('userEmail');
     User.userId = await AsyncStorage.getItem('userId');
     this.props.navigation.navigate(User.userId ? 'App' : 'Auth');
   };

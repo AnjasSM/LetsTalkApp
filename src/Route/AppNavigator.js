@@ -5,6 +5,8 @@ import Home from '../Screens/Home';
 import FriendsList from '../Screens/FriendsList';
 import AuthLoadingScreen from '../Screens/Loading';
 import UserProfile from '../Screens/UserProfile';
+import Chatscreen from '../Screens/Chatscreen';
+import FriendProfile from '../Screens/FriendProfile';
 
 const AppStack = createStackNavigator(
     {
@@ -16,6 +18,12 @@ const AppStack = createStackNavigator(
         },
         UserProfile: {
             screen: UserProfile
+        },
+        Chatscreen: {
+            screen: Chatscreen
+        },
+        FriendProfile: {
+            screen: FriendProfile
         }
     },
     {

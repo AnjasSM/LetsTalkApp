@@ -7,17 +7,33 @@ import 'firebase/database'
 
 class Register extends Component {
     constructor() {
-        super()
+        super();
+        this.getUserLocation();
         this.state = {
-            userId: '',
-            username: '',
-            email: '',
-            password: '',
             phone: '',
             image: '',
-            latitude: '',
-            longitude: ''
+            username: '',
+            password: '',
+            email: '',
+            image: '',
+            latitude: 0,
+            longitude: 0,
         }
+    }
+
+    async getUserLocation() {
+        await navigator.geolocation.getCurrentPosition(
+            (position) => {
+                this.setState({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+                })
+            },
+            (error) => {
+                console.warn('Error ' + error.message)
+            },
+            { enableHighAccuracy: true, maximumAge: 1000, timeout: 200000 }
+        )
     }
 
 
@@ -45,18 +61,26 @@ class Register extends Component {
         User.email = this.state.email;
         User.phone = this.state.phone;
         User.username = this.state.username;
-        let {email, password} = this.state;
+        User.image = 'https://forwardsummit.ca/wp-content/uploads/2019/01/avatar-default.png';
+        let { email, password } = this.state;
         await firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(
                 ({ user }) =>
                     firebase.database().ref('users/' + user.uid).set({
                         email: this.state.email,
+                        status: 'offline',
                         username: this.state.username,
                         password: this.state.password,
                         phone: this.state.phone,
                         image: this.state.image == '' ? 'https://forwardsummit.ca/wp-content/uploads/2019/01/avatar-default.png' : this.state.image,
-                        latitude: '',
-                        longitude: ''
+                        location: {
+                            latitude: this.state.latitude,
+                            longitude: this.state.longitude,
+                            city: {
+                                name: ''
+                            }
+                        }
+
                     })
             )
             .catch(error => {

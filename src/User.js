@@ -1,14 +1,12 @@
 const User = {
-    data:[],
-    userId: null,
-    username : '',
-    email: '',
-    password : '',
-    phone: 0,
-    city:'',
-    image:'',
-    latitude:'',
-    longitude:'',
+    email: null,
+    phone: null,
+    username: null,
+    image: null,
+    uid: null,
+    latitude: null,
+    longtitude: null,
+    friendLocation: []
     
 }
 

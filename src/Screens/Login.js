@@ -6,9 +6,30 @@ import User from '../User';
 
 class Login extends Component {
 
-    state = {
-        email: '',
-        password: ''
+    constructor() {
+        super();
+
+        this.getUserLocation();
+
+        this.state = {
+            email: '',
+            password: '',
+        }
+    }
+
+    async getUserLocation() {
+        await navigator.geolocation.getCurrentPosition(
+            (position) => {
+                this.setState({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+                })
+            },
+            (error) => {
+                console.warn('Error ' + error.message)
+            },
+            { enableHighAccuracy: true, maximumAge: 1000, timeout: 200000 }
+        )
     }
 
     _LoginHandler = async () => {
@@ -27,10 +48,11 @@ class Login extends Component {
     Login = async () => {
         const { email, password } = this.state;
         await firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(async (response) => {
-                User.userId = response.user.uid;
+            .then(async ({ user }) => {
+                User.uid = user.uid;
                 User.email = this.state.email;
-                await AsyncStorage.setItem('userId', response.user.uid);
+                await AsyncStorage.setItem('userEmail', this.state.email);
+                await AsyncStorage.setItem('userId', user.uid);
                 this.props.navigation.navigate('App');
             }).catch(function (error) {
                 let errorCode = error.code;
