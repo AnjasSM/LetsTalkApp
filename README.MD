@@ -15,7 +15,7 @@ Let's Talk is a chat app which features to tracking friend's with Google Map. Th
 
 ### Released APK
 
-<!-- - If u want to test it out download [here](https://bit.ly/2LldUgu) -->
+- If u want to test it out download [here](https://mega.nz/#!q24WFAia)
 
 
 ### APP SCREENSHOTS
